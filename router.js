@@ -5,6 +5,17 @@ class Router {
         this._loadInitialRoute();
     }
 
+ loadRoute(...urlSegs){
+
+    const matchedRoute = this._matchUrlToRoute(urlSegs);
+
+    const url = `/${urlSegs.join('/')}`;
+    history.pushState({}, 'this works', url);
+
+    const routerOutElm = document.querySelectorAll('[data-router]')[0];
+    routerOutElm.innerHTML = matchedRoute.template;
+ }
+
 _matchUrlToRoute(urlSegs){
     const matchRoute = this.routes.find(route => {
         
