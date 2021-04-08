@@ -26,7 +26,7 @@ _matchUrlToRoute(urlSegs){
         }
 
         return routePathSegs
-            .every((routePathSeg, i) => routePathSeg === urlSegs.[i]);
+            .every((routePathSeg, i) => routePathSeg === urlSegs[i]);
     });
 
     return matchRoute;
@@ -35,7 +35,7 @@ _matchUrlToRoute(urlSegs){
 _loadInitialRoute() {
 
     const pathNameSplit = window.location.pathname.split('/');
-    const pathSegs = pathNameSplit.length > 1 ? pathNameSplit(1): '';
+    const pathSegs = pathNameSplit.length > 1 ? pathNameSplit.slice(1): '';
 
     this.loadRoute(...pathSegs);
     }
