@@ -10,5 +10,5 @@ const routes = [
     {
         path: '/aboutme',
         template: '<h1>About me</h1>'
-    },
+    }
 ];
